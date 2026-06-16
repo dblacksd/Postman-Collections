@@ -3418,7 +3418,7 @@
 									"  pm.expect(moment(currentLocalTime).isValid()).to.be.true;\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Current local time matches Moment Now - with one minute difference.\", function () {\r",
+									"pm.test(\"Current local time Moment Now within one minute difference.\", function () {\r",
 									"  console.log(\"Current time is within\", now.diff(currentLocalTime, 'seconds') , \"seconds\"); // difference in seconds\r",
 									"  //console.log(currentLocalTime, now);\r",
 									"  pm.expect(now.diff(currentLocalTime, 'minutes')).to.be.below(1); // allow for a 1 minute difference\r",
