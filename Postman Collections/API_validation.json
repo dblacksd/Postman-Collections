@@ -3381,7 +3381,7 @@
 									"const responseJson = pm.response.json();\r",
 									"const regExDateTime = /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}[-+]\\d{2}:\\d{2}$/ // ISO 8601 date-time format with timezone offset\r",
 									"const source = [\"satellite\", \"manualsatellite\"];\r",
-									"const timeZoneAbbreviations = [\"PST\", \"MST\"];\r",
+									"const timeZoneAbbreviations = [\"AST\",\"EST\",\"CST\",\"MST\",\"PST\",\"AKST\",\"HST\"];\r",
 									"const now = moment();\r",
 									"var currentLocalTime = responseJson.data.currentLocalTime;\r",
 									"const dstStart = moment(\"2026-03-08 02:00:00\");\r",
