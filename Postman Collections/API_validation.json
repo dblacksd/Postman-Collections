@@ -3416,7 +3416,7 @@
 									"});\r",
 									"\r",
 									"pm.test(\"Current local time Moment is same as now.\", function () {\r",
-									"  currentLocalTime = responseJson.data.currentLocalTime;\r",
+									"  console.log(now, currentLocalTime);\r",
 									"  pm.expect(moment(now).isSame(currentLocalTime)).to.be.true;\r",
 									"});"
 								],
