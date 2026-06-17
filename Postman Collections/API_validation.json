@@ -3430,7 +3430,7 @@
 									"    {\r",
 									"        const currentTimeZone = responseJson.data.currentTimeZone.value.timeZoneAbbreviation;\r",
 									"        var a = moment(currentLocalTime);\r",
-									"        var hours = a.hours();\r",
+									"        var hours = a.utc();\r",
 									"        var tzParse = a.zoneAbbr();\r",
 									"        console.log(currentTimeZone, tzParse);\r",
 									"    }\r",
