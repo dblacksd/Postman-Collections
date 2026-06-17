@@ -3474,7 +3474,7 @@
 									"        {\r",
 									"            tzAbbr = localTime.tz('America/Denver').format('z'); // expectiing satellite source will always be MST\r",
 									"            console.log(\"Current timezone source is:\",currentTimeZoneSource);\r",
-									"            console.log(\"Current timezone is:\", tzAbbr)\r",
+									"            console.log(\"Expect current timezone to be:\", tzAbbr)\r",
 									"            pm.expect(tzAbbr).to.be.oneOf(timeZoneAbbreviations);\r",
 									"            pm.expect(tzAbbr).to.be.eq(currentTimeZone);\r",
 									"        }\r",
