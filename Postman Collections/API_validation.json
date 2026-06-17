@@ -3377,7 +3377,7 @@
 							"script": {
 								"id": "4307e275-5e0f-4f34-8519-5af7abcbeb6d",
 								"exec": [
-									"let moment = require ('moment');\r",
+									"let moment = require('moment');\r",
 									"let momentTimezone = require('moment-timezone');\r",
 									"const responseJson = pm.response.json();\r",
 									"const regExDateTime = /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}[-+]\\d{2}:\\d{2}$/ // ISO 8601 date-time format with timezone offset\r",
@@ -3474,6 +3474,29 @@
 									"    }\r",
 									"});\r",
 									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ab9aeee2-4ac8-416b-862d-c013562c1155",
+								"exec": [
+									"/* \r",
+									"Making an Async call out to each of the CDNs and storing the response as a Global variable (This scope can be changed to suit your context).\r",
+									"This will only send both requests if the variable hasn't already been created and not do it on end request.\r",
+									"*/\r",
+									"if (!pm.globals.has(\"moment_js\") || !pm.globals.has(\"moment_tz\")) {\r",
+									"    pm.sendRequest(\"https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone-with-data-2012-2022.min.js\", (mtzErr, mtzRes) => {\r",
+									"        pm.sendRequest(\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js\", (mjsErr, mjsRes) => {\r",
+									"            pm.globals.set(\"moment_js\", mjsRes.text());\r",
+									"            pm.globals.set(\"moment_tz\", mtzRes.text());\r",
+									"        })\r",
+									"    })\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {},
