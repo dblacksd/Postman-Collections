@@ -3378,7 +3378,7 @@
 								"id": "4307e275-5e0f-4f34-8519-5af7abcbeb6d",
 								"exec": [
 									"let moment = require('moment');\r",
-									"let momentTimezone = require('moment-timezone');\r",
+									"(new Function(pm.globals.get(\"moment_tz\")))();\r",
 									"const responseJson = pm.response.json();\r",
 									"const regExDateTime = /^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}[-+]\\d{2}:\\d{2}$/ // ISO 8601 date-time format with timezone offset\r",
 									"const source = [\"satellite\", \"manualsatellite\"];\r",
