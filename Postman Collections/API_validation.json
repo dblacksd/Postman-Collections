@@ -3433,7 +3433,7 @@
 									"        a.hours();\r",
 									"        //a.utc();\r",
 									"        var tzParse = a.zoneAbbr();\r",
-									"        console.log(currentTimeZone, tzParse);\r",
+									"        console.log(currentTimeZone, a);\r",
 									"    }\r",
 									"});\r",
 									"\r",
