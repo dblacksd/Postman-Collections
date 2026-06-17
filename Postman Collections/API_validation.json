@@ -3431,7 +3431,7 @@
 									"    if (currentTimeZoneConfigured)\r",
 									"    {\r",
 									"        const currentTimeZone = responseJson.data.currentTimeZone.value.timeZoneAbbreviation;\r",
-									"        var localTime = currentLocalTime;\r",
+									"        var localTime = moment_tz(\"2013-11-18 11:55\", \"America/Toronto\");\r",
 									"        //var tzAbbr = time.zoneAbbr();\r",
 									"    \r",
 									"        \r",
