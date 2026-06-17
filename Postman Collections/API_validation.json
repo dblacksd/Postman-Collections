@@ -3429,7 +3429,7 @@
 									"    if (currentTimeZoneConfigured)\r",
 									"    {\r",
 									"        const currentTimeZone = responseJson.data.currentTimeZone.value.timeZoneAbbreviation;\r",
-									"        console.log(moment.parseZone(currentLocalTime).utcOffset());\r",
+									"        console.log(moment.parseZone(currentLocalTime, 'YYYY MM DD ZZ', true).utcOffset());\r",
 									"    }\r",
 									"});\r",
 									"\r",
