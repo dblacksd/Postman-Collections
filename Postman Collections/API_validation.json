@@ -3440,7 +3440,7 @@
 									"            pm.expect(currentTimeZone).to.be.oneOf(timeZoneAbbreviations)\r",
 									"            pm.expect(currentTimeZone).to.be.eq(responseJson.data.timeZoneConfiguration.manualSatelliteConfiguration.value.timeZoneAbbreviation);\r",
 									"        }\r",
-									"        } else if (currentTimeZoneSource === \"satellite\")\r",
+									"        else if (currentTimeZoneSource === \"satellite\")\r",
 									"        {\r",
 									"            //tzAbbr = localTime.tz('America/Denver').format('z'); // satellite source will always be MST\r",
 									"            pm.expect(tzAbbr).to.be.oneOf(timeZoneAbbreviations);\r",
