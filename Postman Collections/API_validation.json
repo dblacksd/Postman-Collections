@@ -3435,7 +3435,7 @@
 									"        //var timeZoneOffset = time.getTimeZoneOffset();\r",
 									"        //var tzParse = currentLocalTime.tz();\r",
 									"        \r",
-									"        console.log(currentTimeZone);\r",
+									"        console.log(currentTimeZone, time);\r",
 									"    }\r",
 									"});\r",
 									"\r",
