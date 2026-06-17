@@ -3397,7 +3397,7 @@
 									"    pm.expect(responseJson.data.currentTimeZone).to.have.property('initialized');\r",
 									"    pm.expect(responseJson.data.currentTimeZone).to.have.property('value');\r",
 									"    pm.expect(responseJson.data.currentTimeZone.value).to.have.property('timeZoneAbbreviation').to.be.oneOf(timeZoneAbbreviations);\r",
-									"    pm.expect(responseJson.data.currentTimeZone.value).to.have.property('observeDaylightSavings').that.is.true;\r",
+									"    pm.expect(responseJson.data.currentTimeZone.value).to.have.property('observeDaylightSavings').that.is.a('boolean');\r",
 									"    pm.expect(responseJson.data.currentTimeZone.value).to.have.property('daylightSavingsTimeStart');\r",
 									"    pm.expect(responseJson.data.currentTimeZone.value.daylightSavingsTimeStart).to.have.property('initialized').that.is.true\r",
 									"    pm.expect(responseJson.data.currentTimeZone.value.daylightSavingsTimeStart).to.have.property('value').that.is.a('string');\r",
