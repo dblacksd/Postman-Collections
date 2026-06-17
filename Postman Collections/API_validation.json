@@ -3440,7 +3440,7 @@
 									"        } else if (currentTimeZoneSource === \"satellite\")\r",
 									"        {\r",
 									"            var localTime = moment(currentLocalTime);\r",
-									"            var tzAbbr = localTime.tz('America/Los_Angeles').format('z');\r",
+									"            var tzAbbr = localTime.tz('America/Los_Angeles').format('z'); // satellite source will always be MST\r",
 									"            pm.expect(tzAbbr).to.be.oneOf(timeZoneAbbreviations);\r",
 									"            pm.expect(tzAbbr).to.be.eq(currentTimeZone);\r",
 									"            console.log(\"Current timezone source is:\",currentTimeZoneSource )\r",
