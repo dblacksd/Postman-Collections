@@ -3465,7 +3465,7 @@
 									"            pm.expect(tzAbbr).to.be.oneOf(timeZoneAbbreviations);\r",
 									"            pm.expect(tzAbbr).to.be.eq(currentTimeZone);\r",
 									"            console.log(\"Current timezone source is:\",currentTimeZoneSource);\r",
-									"            console.log(\"Current timezone is:\", tzAbbr, \"hello!\")\r",
+									"            console.log(\"Current timezone is:\", tzAbbr);\r",
 									"        }\r",
 									"        else if (currentTimeZoneSource === \"satellite\")\r",
 									"        {\r",
