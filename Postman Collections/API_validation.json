@@ -3377,7 +3377,7 @@
 							"script": {
 								"id": "4307e275-5e0f-4f34-8519-5af7abcbeb6d",
 								"exec": [
-									"let moment = require('moment');\r",
+									"//let moment = require('moment');\r",
 									"(new Function(pm.globals.get(\"moment_js\")))();\r",
 									"(new Function(pm.globals.get(\"moment_tz\")))();\r",
 									"const responseJson = pm.response.json();\r",
@@ -3431,9 +3431,9 @@
 									"    if (currentTimeZoneConfigured)\r",
 									"    {\r",
 									"        const currentTimeZone = responseJson.data.currentTimeZone.value.timeZoneAbbreviation;\r",
-									"        var localTime = moment(\"2024-06-01T12:00:00Z\");\r",
+									"        var localTime = moment(currentLocalTime);\r",
 									"        //var tzAbbr = time.zoneAbbr();\r",
-									"        console.log(localTime.tzc('America/Los_Angeles').format('ha z'));\r",
+									"        console.log(localTime.tz('America/Los_Angeles').format('z'));\r",
 									"    }\r",
 									"});\r",
 									"\r",
