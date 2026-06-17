@@ -3439,6 +3439,8 @@
 									"            pm.expect(manualTzSource).to.be.true; // manual timezone source is configured\r",
 									"            pm.expect(currentTimeZone).to.be.oneOf(timeZoneAbbreviations)\r",
 									"            pm.expect(currentTimeZone).to.be.eq(responseJson.data.timeZoneConfiguration.manualSatelliteConfiguration.value.timeZoneAbbreviation);\r",
+									"            var names = moment.tz.names(); // list of all timezones\r",
+									"            console.log(names)\r",
 									"            switch (currentTimeZone) {\r",
 									"                case \"AST\": \r",
 									"                    tzAbbr = localTime.tz('America/Denver').format('z');\r",
