@@ -683,7 +683,7 @@
 					"response": []
 				},
 				{
-					"name": "Get global IP Live Linear data",
+					"name": "IPLL Input & Server Status",
 					"event": [
 						{
 							"listen": "test",
@@ -735,6 +735,81 @@
 						"method": "GET",
 						"header": [],
 						"url": "https://{{hostname}}/web/input/ipll"
+					},
+					"response": []
+				},
+				{
+					"name": "IPLL Blade Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c9c85b2d-db11-4677-8d2b-b5395093b3a0",
+								"exec": [
+									"const responseJson = pm.response.json();\r",
+									"const ipllAuthorized = 81;\r",
+									"const ipllActive = 50;\r",
+									"\r",
+									"pm.test(\"IPLL properties...\", function () {\r",
+									"    pm.expect(responseJson.data).to.have.property('activeServices').that.is.lessThanOrEqual(ipllActive);\r",
+									"    pm.expect(responseJson.data).to.have.property('authorizedServices').that.is.lessThanOrEqual(ipllAuthorized);\r",
+									"    pm.expect(responseJson.data).to.have.property('ipllServerStatus');\r",
+									"    pm.expect(responseJson.data.ipllServerStatus).to.have.property('control');\r",
+									"    pm.expect(responseJson.data.ipllServerStatus.control).to.have.property('color').that.is.eql('OK');\r",
+									"    pm.expect(responseJson.data.ipllServerStatus.control).to.have.property('message').that.is.eql('Ok');\r",
+									"    pm.expect(responseJson.data.ipllServerStatus).to.have.property('data');\r",
+									"    pm.expect(responseJson.data.ipllServerStatus.data).to.have.property('color').that.is.eql('OK');\r",
+									"    pm.expect(responseJson.data.ipllServerStatus.data).to.have.property('message').that.is.eql('Ok');\r",
+									"    pm.expect(responseJson.data.ipllServerStatus).to.have.property('access');\r",
+									"    pm.expect(responseJson.data.ipllServerStatus.access).to.have.property('color').that.is.eql('OK');\r",
+									"    pm.expect(responseJson.data.ipllServerStatus.access).to.have.property('message').that.is.eql('Ok');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "739fea6d-ca5f-4445-8074-f6cc3b010e99",
+								"exec": [
+									"var esbGlobalConfig =  JSON.parse(pm.globals.get(\"esbGlobalConfig\"));\r",
+									"var bladeInfo = esbGlobalConfig.blades;\r",
+									"\r",
+									"var bladeCount = bladeInfo.length\r",
+									"var esbBladeIds = [];\r",
+									"let k = 0;\r",
+									"\r",
+									"bladeInfo.forEach(function(a)\r",
+									"{\r",
+									"    esbBladeIds[k] = a.slotId;\r",
+									"    k ++;\r",
+									"});\r",
+									"\r",
+									"\r",
+									"if (bladeCount > 0)\r",
+									"{\r",
+									"    bladeCount = bladeCount -1  // to account of 0 blade index\r",
+									"    pm.globals.set(\"slotId\", esbBladeIds[bladeCount]);\r",
+									"    pm.globals.set(\"esbBladeCount\", bladeCount);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "94758016-b0bc-44b8-842a-faa4d0156ef6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://{{hostname}}/web/input/blade/{{slotId}}"
 					},
 					"response": []
 				},
@@ -3767,9 +3842,7 @@
 									"    bladeCount = bladeCount -1  // to account of 0 blade index",
 									"    pm.globals.set(\"slotId\", esbBladeIds[bladeCount]);",
 									"    pm.globals.set(\"esbBladeCount\", bladeCount);",
-									"} ",
-									"",
-									""
+									"} "
 								],
 								"type": "text/javascript",
 								"packages": {},
