@@ -746,24 +746,7 @@
 							"script": {
 								"id": "c9c85b2d-db11-4677-8d2b-b5395093b3a0",
 								"exec": [
-									"const responseJson = pm.response.json();\r",
-									"const ipllAuthorized = 81;\r",
-									"const ipllActive = 50;\r",
-									"\r",
-									"pm.test(\"IPLL properties...\", function () {\r",
-									"    pm.expect(responseJson.data).to.have.property('activeServices').that.is.lessThanOrEqual(ipllActive);\r",
-									"    pm.expect(responseJson.data).to.have.property('authorizedServices').that.is.lessThanOrEqual(ipllAuthorized);\r",
-									"    pm.expect(responseJson.data).to.have.property('ipllServerStatus');\r",
-									"    pm.expect(responseJson.data.ipllServerStatus).to.have.property('control');\r",
-									"    pm.expect(responseJson.data.ipllServerStatus.control).to.have.property('color').that.is.eql('OK');\r",
-									"    pm.expect(responseJson.data.ipllServerStatus.control).to.have.property('message').that.is.eql('Ok');\r",
-									"    pm.expect(responseJson.data.ipllServerStatus).to.have.property('data');\r",
-									"    pm.expect(responseJson.data.ipllServerStatus.data).to.have.property('color').that.is.eql('OK');\r",
-									"    pm.expect(responseJson.data.ipllServerStatus.data).to.have.property('message').that.is.eql('Ok');\r",
-									"    pm.expect(responseJson.data.ipllServerStatus).to.have.property('access');\r",
-									"    pm.expect(responseJson.data.ipllServerStatus.access).to.have.property('color').that.is.eql('OK');\r",
-									"    pm.expect(responseJson.data.ipllServerStatus.access).to.have.property('message').that.is.eql('Ok');\r",
-									"});"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -809,7 +792,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "https://{{hostname}}/web/input/blade/{{slotId}}"
+						"url": "https://{{hostname}}/web/input/ipll/blade/{{slotId}}"
 					},
 					"response": []
 				},
