@@ -840,7 +840,7 @@
 									"});",
 									"",
 									"// 13. Validate each item in `data.activeServices`",
-									"pm.test(\"Each item in data.activeServices has required fields with correct types\", function () {",
+									"pm.test(\"Active Services...\", function () {",
 									"    data.activeServices.forEach(function (service, index) {",
 									"        pm.expect(service, `service[${index}] should be an object`).to.be.an(\"object\");",
 									"",
@@ -851,7 +851,7 @@
 									"",
 									"        pm.expect(service.name, `service[${index}].name should be a string`).to.be.a(\"string\");",
 									"        pm.expect(service.errors, `service[${index}].errors should be a number`).to.be.a(\"number\");",
-									"        pm.expect(service.bitrateBps, `service[${index}].bitrateBps should be a number`).to.be.a(\"number\").that.is.greaterThan(0);",
+									"        pm.expect(service.bitrateBps, `service[${index}].bitrateBps should be a number grater than 0.`).to.be.a(\"number\").that.is.greaterThan(0);",
 									"    });",
 									"});",
 									""
