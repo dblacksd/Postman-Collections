@@ -747,6 +747,7 @@
 								"id": "c9c85b2d-db11-4677-8d2b-b5395093b3a0",
 								"exec": [
 									"const IPLLIDs = [\"IPLLID-BCE000004\"];",
+									"const networkPort = [\"SFP+\", \"ETH\"];",
 									"",
 									"// 1. Validate the response is valid JSON",
 									"pm.test(\"Response is valid JSON\", function () {",
@@ -802,7 +803,7 @@
 									"// 7. Validate `data.networkPort` is a string",
 									"pm.test(\"data.networkPort is a string\", function () {",
 									"    pm.expect(data).to.have.property(\"networkPort\");",
-									"    pm.expect(data.networkPort).to.be.a(\"string\");",
+									"    pm.expect(data.networkPort).to.be.a(\"string\").that.is.oneOf(networkPort);",
 									"});",
 									"",
 									"// 8. Validate `data.networkPortStatus` exists and has `color` and `message` string fields",
