@@ -851,7 +851,7 @@
 									"",
 									"        pm.expect(service.name, `service[${index}].name should be a string`).to.be.a(\"string\");",
 									"        pm.expect(service.errors, `service[${index}].errors should be a number`).to.be.a(\"number\");",
-									"        pm.expect(service.bitrateBps, `service[${index}].bitrateBps should be a number grater than 0.`).to.be.a(\"number\").that.is.greaterThan(0);",
+									"        pm.expect(service.bitrateBps, `service[${index}].bitrateBps should greater than 0.`).to.be.a(\"number\").that.is.greaterThan(0);",
 									"    });",
 									"});",
 									""
