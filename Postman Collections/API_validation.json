@@ -3955,7 +3955,7 @@
 									"const defaultRoutingInterface = [\"none\", \"eth\", \"sfp\"];\r",
 									"\r",
 									"\r",
-									"pm.test(\"Edge Server...\", function () {\r",
+									"pm.test(\"Edge Server JSON validation...\", function () {\r",
 									"    pm.expect(responseJson.data).to.have.property('slotId').that.eql(slotId);\r",
 									"    pm.expect(responseJson.data).to.have.property('mode').that.contains.oneOf(mode);\r",
 									"    pm.expect(responseJson.data).to.have.property('applications').that.is.an('array');\r",
