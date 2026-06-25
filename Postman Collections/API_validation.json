@@ -3502,6 +3502,19 @@
 						"url": "https://{{hostname}}/web/status/edgeserver/blade/{{slotId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "ESB Status - Total Metrics",
+					"id": "88229c08-5482-4257-a46b-c51ece91ee5c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://{{hostname}}/web/status/edgeserver/blade/{{slotId}}/application/total"
+					},
+					"response": []
 				}
 			],
 			"id": "7f6f088e-c82c-4ce7-8a59-94600694b455",
