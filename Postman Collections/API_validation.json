@@ -3455,7 +3455,7 @@
 									"// HD Over Coax Row\r",
 									"if (applications[0].status.color === \"OK\" && applications[0].enabled === true && applications[0].systemMetrics.initialized === true)\r",
 									"{\r",
-									"    console.log (\"HD Over Coax still TODO\");\r",
+									"    console.log (\"HD Over Coax validation still TODO\");\r",
 									"}\r",
 									"else {console.log (\"HD Over Coax Not Enabled\");}\r",
 									"\r",
@@ -3482,7 +3482,7 @@
 									"        pm.expect(applications[1].systemMetrics.value.gpuVideoUtilizationPercent).to.be.at.most(100);\r",
 									"        pm.expect(applications[1].systemMetrics.value.gpuVideoEnhanceUtilizationPercent).to.be.at.most(100);\r",
 									"    });\r",
-									"}\r",
+									"} else { console.log(\"IPLL not enabled\");}\r",
 									"\r",
 									""
 								],
