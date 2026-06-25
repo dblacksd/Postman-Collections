@@ -3513,7 +3513,15 @@
 								"exec": [
 									"const responseJson = pm.response.json();\r",
 									"var data = responseJson.data;\r",
-									"var total  = data.systemMetrics;"
+									"var total  = data.systemMetrics;\r",
+									"\r",
+									"pm.test(\"Total metrics are available\", function () {\r",
+									"    pm.expect(data.id).to.eq(\"total\");\r",
+									"    pm.expect(data.displayName).to.eq(\"Total\");\r",
+									"    pm.expect(data.status.initialized).eq(false);\r",
+									"\r",
+									"});\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
