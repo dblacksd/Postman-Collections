@@ -4699,9 +4699,9 @@
 								"exec": [
 									"const responseJson = pm.response.json();\r",
 									"const selectedCams  = 12;\r",
-									"const allServices = 1448;\r",
+									"const allServices = 1434;\r",
 									"const allFeatures = 17;\r",
-									"const enabledServices = 447;\r",
+									"const enabledServices = 461;\r",
 									"const enabledFeatureSet = [35200, 35267, 35508, 35549, 35552, 35554, 35557, 35558, 35559, 35571];\r",
 									"\r",
 									"pm.test(\"ProCAM Authorization set...\" , function () {\r",
