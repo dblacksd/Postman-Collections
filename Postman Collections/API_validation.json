@@ -3505,6 +3505,22 @@
 				},
 				{
 					"name": "ESB Status - Total Metrics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f537d25c-7b2f-4c20-b18d-3918472d59a1",
+								"exec": [
+									"const responseJson = pm.response.json();\r",
+									"var data = responseJson.data;\r",
+									"var total  = data.systemMetrics;"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "88229c08-5482-4257-a46b-c51ece91ee5c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
