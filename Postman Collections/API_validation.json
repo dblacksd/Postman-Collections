@@ -3424,7 +3424,7 @@
 									"var slotId = pm.globals.get(\"slotId\");\r",
 									"\r",
 									"pm.test(\"Check the selected slot Id...\" + slotId, function () {\r",
-									"    pm.expect(pm.response.data.slotId).to.eql(slotId);\r",
+									"    pm.expect(data.slotId).to.eql(slotId);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"Check the total system metrics...\", function () {\r",
