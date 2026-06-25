@@ -3480,10 +3480,12 @@
 									"const devVisiumURL = \"md.dev.atxvisiumlink.com:443\";\r",
 									"const visiumClient = \"Connected\";\r",
 									"\r",
-									"pm.test(\"NMS page...\", function () {\r",
+									"pm.test(\"NMS Status is OK...\", function () {\r",
 									"    pm.expect(responseJson.data).to.have.property('configuration');\r",
 									"    pm.expect(responseJson.data.configuration).to.have.property('interval').to.be.a('number');\r",
 									"    pm.expect(responseJson.data.configuration).to.have.property('urls').to.be.an('array');\r",
+									"});\r",
+									"pm.test(\"Visium Link status is ...\" + responseJson.data.visiumLink.servers[0].status.message , function () {\r",
 									"    pm.expect(responseJson.data).to.have.property('visiumLink');\r",
 									"    pm.expect(responseJson.data.visiumLink).to.have.property('enabled').that.is.true;\r",
 									"    pm.expect(responseJson.data.visiumLink).to.have.property('servers').to.be.an('array');\r",
@@ -3494,7 +3496,8 @@
 									"});"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
