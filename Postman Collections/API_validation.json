@@ -3594,6 +3594,19 @@
 						"url": "https://{{hostname}}/web/status/edgeserver/blade/{{slotId}}/application/total"
 					},
 					"response": []
+				},
+				{
+					"name": "ESB Status - IPLL Total Metrics",
+					"id": "da8662a1-1764-4575-b203-de4dd9518e68",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://{{hostname}}/web/status/edgeserver/blade/{{slotId}}/application/atxIpll"
+					},
+					"response": []
 				}
 			],
 			"id": "7f6f088e-c82c-4ce7-8a59-94600694b455",
