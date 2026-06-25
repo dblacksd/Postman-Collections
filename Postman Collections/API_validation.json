@@ -3413,6 +3413,24 @@
 								"packages": {},
 								"requests": {}
 							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "74003422-f987-42a6-ad33-6ae840fba30f",
+								"exec": [
+									"const responseJson = pm.response.json();\r",
+									"var data = responseJson.data;\r",
+									"var slotId = pm.globals.get(\"slotId\");\r",
+									"\r",
+									"pm.test(\"Check the selected slot Id...\" + slotId, function () {\r",
+									"    pm.expect(pm.response.json().data.slotId).to.eql(slotId);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
 						}
 					],
 					"id": "8ad9097a-b440-4ac9-8781-63adf48a9cef",
