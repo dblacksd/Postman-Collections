@@ -3388,6 +3388,8 @@
 							"script": {
 								"id": "800fb973-6225-454c-a1d0-83c5ec151e13",
 								"exec": [
+									" pm.globals.set(\"slotId\", 6);\r",
+									"/*\r",
 									"var esbGlobalConfig =  JSON.parse(pm.globals.get(\"esbGlobalConfig\"));\r",
 									"var bladeInfo = esbGlobalConfig.blades;\r",
 									"\r",
@@ -3407,7 +3409,8 @@
 									"    bladeCount = bladeCount -1  // to account of 0 blade index\r",
 									"    pm.globals.set(\"slotId\", esbBladeIds[bladeCount]);\r",
 									"    pm.globals.set(\"esbBladeCount\", bladeCount);\r",
-									"}"
+									"}\r",
+									"*/"
 								],
 								"type": "text/javascript",
 								"packages": {},
