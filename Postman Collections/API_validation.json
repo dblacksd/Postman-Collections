@@ -3712,6 +3712,19 @@
 						"url": "https://{{hostname}}/web/status/edgeserver/blade/{{slotId}}/application/atxIpll"
 					},
 					"response": []
+				},
+				{
+					"name": "ESB Status - Transcoding Total",
+					"id": "2da3611a-44e9-4fa7-a432-66525b944eea",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://{{hostname}}/web/status/edgeserver/blade/{{slotId}}/application/atxHdOverCoaxTranscoding"
+					},
+					"response": []
 				}
 			],
 			"id": "7f6f088e-c82c-4ce7-8a59-94600694b455",
