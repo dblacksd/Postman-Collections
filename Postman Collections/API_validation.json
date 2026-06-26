@@ -3644,7 +3644,7 @@
 									"    var disk = total.value.disk;\r",
 									"    var diskHistory = total.value.disk.history;\r",
 									"    var gpuHistory = total.value.gpu.history;\r",
-									"    \r",
+									"\r",
 									"    // CPU History\r",
 									"    for (var i = 0; i < cpuHistory.length; i++) {\r",
 									"        pm.test(\"IPLL CPU History \" + i, function () {\r",
