@@ -3527,7 +3527,7 @@
 					"response": []
 				},
 				{
-					"name": "ESB Status - Total Metrics",
+					"name": "ESB Status - System Total Metrics",
 					"event": [
 						{
 							"listen": "test",
@@ -3714,7 +3714,7 @@
 					"response": []
 				},
 				{
-					"name": "ESB Status - Transcoding Total",
+					"name": "ESB Status - Transcoding Total Metrics",
 					"event": [
 						{
 							"listen": "test",
