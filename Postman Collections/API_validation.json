@@ -3427,7 +3427,7 @@
 									"var totals = data.totalSystemMetrics;\r",
 									"var applications = data.applicationStatuses;\r",
 									"var slotId = pm.globals.get(\"slotId\");\r",
-									"pm.globals.set(\"EsbTotals\", totals);\r",
+									"var totalMetrics = JSON.stringify(pm.globals.set(\"EsbTotals\", totals));\r",
 									"\r",
 									"// Total Row\r",
 									"\r",
