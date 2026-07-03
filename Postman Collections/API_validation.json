@@ -3473,6 +3473,7 @@
 									"\r",
 									"    pm.test(\"Transcoder Disk utilization... \" + applications[0].systemMetrics.value.diskUtilizationPercent + \" %\" , function () {\r",
 									"        pm.expect(applications[0].systemMetrics.value.diskUtilizationPercent).to.be.at.most(100);\r",
+									"        pm.expect(applications[0].systemMetrics.value.diskUtilizationPercent).to.be.lessThanOrEqual(totals.diskUtilizationPercent);\r",
 									"        pm.expect(applications[0].systemMetrics.value.diskReadBytesPerSec).to.be.at.least(0);\r",
 									"        pm.expect(applications[0].systemMetrics.value.diskWriteBytesPerSec).to.be.at.least(0);\r",
 									"    });\r",
