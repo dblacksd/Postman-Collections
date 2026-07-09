@@ -5822,7 +5822,7 @@
 										"id": "8b86ea34-1602-49a0-a366-40e76499acc3",
 										"exec": [
 											"const responseJson = pm.response.json();\r",
-											"const rxTypes = [\"atsc\"];\r",
+											"const rxTypes = [\"atsc\",\"satellite\",\"ipll\",\"ip\",\"file\"];\r",
 											"\r",
 											"if (pm.response.code == 200)\r",
 											"{\r",
