@@ -5941,6 +5941,7 @@
 											"    pm.test(\"Streaming Output Network Guide Display\" , function () {\r",
 											"        pm.expect(responseJson.data).to.have.property('currentSystemTimeLocal');\r",
 											"        pm.expect((moment(responseJson.data.currentSystemTimeLocal).isValid())).to.be.true;\r",
+											"        pm.expect(responseJson.data).to.have.property('serviceEventData').that.is.an('array').with.lengthOf.greaterThan(0);\r",
 											"    });\r",
 											"    \r",
 											"}\r",
