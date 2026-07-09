@@ -5875,8 +5875,7 @@
 											"else\r",
 											"{\r",
 											"    console.log(\"No Streaming Network Services Found.\")\r",
-											"}\r",
-											""
+											"}"
 										],
 										"type": "text/javascript",
 										"packages": {},
