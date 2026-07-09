@@ -5867,7 +5867,7 @@
 											"            pm.expect(responseJson.data.configuredOutputs[i].slateReplacementText).to.have.property('initialized').that.is.a(\"boolean\");\r",
 											"            if (responseJson.data.configuredOutputs[i].slateReplacementText.initialized == true)\r",
 											"            {\r",
-											"                // WIP\r",
+											"                pm.expect(responseJson.data.configuredOutputs[i].slateReplacementText).to.have.property('value').that.is.a(\"string\");\r",
 											"            }\r",
 											"         });\r",
 											"    }\r",
