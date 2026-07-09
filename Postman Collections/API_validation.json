@@ -5848,7 +5848,7 @@
 											"        for (var i = 0; i < responseJson.data.configuredOutputs.length; i++) {\r",
 											"            pm.expect(responseJson.data.configuredOutputs[i]).to.have.property('configuredOutputId').that.is.a(\"string\");\r",
 											"            pm.expect(responseJson.data.configuredOutputs[i]).to.have.property('inputServiceId').that.is.a(\"string\");\r",
-											"            //pm.expect(responseJson.data.configuredOutputs[i]).to.have.property('enabled').that.is(true);\r",
+											"            pm.expect(responseJson.data.configuredOutputs[i]).to.have.property('enabled').that.is.a(\"boolean\").that.is(\"true\");\r",
 											"\r",
 											"        }\r",
 											"    });\r",
