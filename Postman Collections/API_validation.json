@@ -5954,7 +5954,7 @@
 											"                    pm.expect(responseJson.data.serviceEventData[i].eventData[j]).to.have.property('eventName').that.is.a('string');\r",
 											"                    pm.expect(responseJson.data.serviceEventData[i].eventData[j]).to.have.property('startTimeLocal');\r",
 											"                    pm.expect((moment(responseJson.data.serviceEventData[i].eventData[j].startTimeLocal).isValid())).to.be.true;\r",
-											"                    pm.expect(responseJson.data.serviceEventData[i].eventData[j]).to.have.property('duration').that.is.a('number');\r",
+											"                    pm.expect(responseJson.data.serviceEventData[i].eventData[j]).to.have.property('duration').that.is.a('number').that.is.greaterThan(0);\r",
 											"                });\r",
 											"            }\r",
 											"        });\r",
@@ -5964,9 +5964,7 @@
 											"else\r",
 											"{\r",
 											"    console.log(\"No Streaming Network Guide Display\")\r",
-											"}\r",
-											"\r",
-											""
+											"}"
 										],
 										"type": "text/javascript",
 										"packages": {},
