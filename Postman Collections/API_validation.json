@@ -5788,6 +5788,79 @@
 								"url": "https://{{hostname}}/web/outputnetworks/streaming/{{streamingNetworkId}}"
 							},
 							"response": []
+						},
+						{
+							"name": "Get the Streaming Network Services",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "18c1ac08-88ce-416b-8bbb-5c90533c19fe",
+										"exec": [
+											"var availableNetworks = JSON.parse(pm.globals.get(\"availableNetworks\"));\r",
+											"var streamingNetworkId;\r",
+											"\r",
+											"availableNetworks.forEach(function(a)\r",
+											"{\r",
+											"    if (a.type == \"streaming\")\r",
+											"    {\r",
+											"        streamingNetworkId = a.id;\r",
+											"    }\r",
+											"});\r",
+											"\r",
+											"pm.globals.set (\"streamingNetworkId\", streamingNetworkId);\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "8b86ea34-1602-49a0-a366-40e76499acc3",
+										"exec": [
+											"const responseJson = pm.response.json();\r",
+											"/*\r",
+											"if (pm.response.code == 200)\r",
+											"{\r",
+											"    pm.test(\"Streaming Output Network Configuration, \" + responseJson.data.name + \" , \" + responseJson.data.id , function () {\r",
+											"        pm.expect(responseJson.data).to.have.property('id').that.eq(\"4000\");\r",
+											"        pm.expect(responseJson.data).to.have.property('name').that.is.a(\"string\");\r",
+											"        pm.expect(responseJson.data).to.have.property('blades').that.is.an(\"array\").that.has.lengthOf > 0;\r",
+											"        pm.expect(responseJson.data).to.have.property('enableServiceSlateReplacement').that.is.a(\"boolean\");\r",
+											"    });\r",
+											"}\r",
+											"\r",
+											"else\r",
+											"{\r",
+											"    console.log(\"No Streaming Network Configuration\")\r",
+											"}\r",
+											"*/"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "3e673009-c822-4a70-bbd5-ea9b82a67b79",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "{{authToken}}",
+										"type": "text"
+									}
+								],
+								"url": "https://{{hostname}}/web/outputnetworks/streaming/{{streamingNetworkId}}/services"
+							},
+							"response": []
 						}
 					],
 					"id": "3d013909-f7b2-49b9-9a17-29d5d8ea8de0"
