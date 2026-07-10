@@ -6074,6 +6074,8 @@
 										"exec": [
 											"let moment = require('moment');\r",
 											"const responseJson = pm.response.json();\r",
+											"var service = responseJson.data.serviceEventData;\r",
+											"var event = responseJson.data.serviceEventData[0].eventData[0];\r",
 											"\r",
 											"if (pm.response.code == 200)\r",
 											"{\r",
