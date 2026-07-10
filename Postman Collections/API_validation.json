@@ -5847,6 +5847,111 @@
 							"response": []
 						},
 						{
+							"name": "Get the current QAM Network Guide Configuration",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "18c1ac08-88ce-416b-8bbb-5c90533c19fe",
+										"exec": [
+											"var availableNetworks = JSON.parse(pm.globals.get(\"availableNetworks\"));\r",
+											"var qamNetworkId;\r",
+											"var qamNetworkType;\r",
+											"\r",
+											"availableNetworks.forEach(function(a)\r",
+											"{\r",
+											"    if (a.type == \"qam\")\r",
+											"    {\r",
+											"        qamNetworkId = a.id;\r",
+											"        qamNetworkType = a.type;\r",
+											"    }\r",
+											"    if (a.type == \"evolveqam\")\r",
+											"    {\r",
+											"        qamNetworkId = a.id;\r",
+											"        qamNetworkType = a.type;\r",
+											"    }\r",
+											"    if (a.type == \"hdovercoax\")\r",
+											"    {\r",
+											"        qamNetworkId = a.id;\r",
+											"        qamNetworkType = a.type;\r",
+											"    }\r",
+											"});\r",
+											"\r",
+											"pm.globals.set (\"qamNetworkId\", qamNetworkId);\r",
+											"pm.globals.set(\"qamNetworkType\", qamNetworkType);\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "91784762-a51e-4f0b-bf8d-5c9d4a23c212",
+										"exec": [
+											"let moment = require('moment');\r",
+											"const responseJson = pm.response.json();\r",
+											"//var serviceEventData = responseJson.data.serviceEventData;\r",
+											"\r",
+											"/*\r",
+											"if (pm.response.code == 200)\r",
+											"{\r",
+											"    pm.test(\"QAN Output Network Guide Display\" , function () {\r",
+											"        pm.expect(responseJson.data).to.have.property('currentSystemTimeLocal');\r",
+											"        pm.expect((moment(responseJson.data.currentSystemTimeLocal).isValid())).to.be.true;\r",
+											"        pm.expect(responseJson.data).to.have.property('serviceEventData').that.is.an('array').with.lengthOf.greaterThan(0);\r",
+											"    });\r",
+											"\r",
+											"    for (var i = 0; i < serviceEventData.length; i++) {\r",
+											"        pm.test(\"QAM Service Data for \" + serviceEventData[i].serviceName + \" is OK\", function () {\r",
+											"            pm.expect(serviceEventData[i]).to.have.property('inputServiceId');\r",
+											"            pm.expect(serviceEventData[i]).to.have.property('serviceName');\r",
+											"            pm.expect(serviceEventData[i]).to.have.property('eventData').that.is.an('array').with.lengthOf.greaterThan(0);\r",
+											"            for (var j = 0; j < serviceEventData[i].eventData.length; j++) {\r",
+											"                pm.test(\"QAM Service Event Data for \" + serviceEventData[i].eventData[j].eventName + \" is OK\", function () {\r",
+											"                    pm.expect(serviceEventData[i].eventData[j]).to.have.property('eventName').that.is.a('string');\r",
+											"                    pm.expect(serviceEventData[i].eventData[j]).to.have.property('startTimeLocal');\r",
+											"                    pm.expect((moment(serviceEventData[i].eventData[j].startTimeLocal).isValid())).to.be.true;\r",
+											"                    pm.expect(serviceEventData[i].eventData[j]).to.have.property('duration').that.is.a('number').that.is.greaterThan(0);\r",
+											"                });\r",
+											"            }\r",
+											"        });\r",
+											"    }    \r",
+											"}\r",
+											"\r",
+											"else\r",
+											"{\r",
+											"    console.log(\"No QAM Network Guide Display\")\r",
+											"}\r",
+											"*/"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "043fd0ed-f190-4e0d-b98f-8c5e1688e76c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-XSRF-TOKEN",
+										"value": "{{authToken}}",
+										"type": "text"
+									}
+								],
+								"url": "https://{{hostname}}/web/outputnetworks/{{qamNetworkType}}/{{qamNetworkId}}/guide"
+							},
+							"response": []
+						},
+						{
 							"name": "Get the current QAM Network Guide Display",
 							"event": [
 								{
@@ -5934,110 +6039,6 @@
 								}
 							],
 							"id": "0066562a-ef1c-416f-8e6b-eead035e95a0",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-XSRF-TOKEN",
-										"value": "{{authToken}}",
-										"type": "text"
-									}
-								],
-								"url": "https://{{hostname}}/web/outputnetworks/{{qamNetworkType}}/{{qamNetworkId}}/guide/display"
-							},
-							"response": []
-						},
-						{
-							"name": "Get the current QAM Network Guide Display Copy",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "18c1ac08-88ce-416b-8bbb-5c90533c19fe",
-										"exec": [
-											"var availableNetworks = JSON.parse(pm.globals.get(\"availableNetworks\"));\r",
-											"var qamNetworkId;\r",
-											"var qamNetworkType;\r",
-											"\r",
-											"availableNetworks.forEach(function(a)\r",
-											"{\r",
-											"    if (a.type == \"qam\")\r",
-											"    {\r",
-											"        qamNetworkId = a.id;\r",
-											"        qamNetworkType = a.type;\r",
-											"    }\r",
-											"    if (a.type == \"evolveqam\")\r",
-											"    {\r",
-											"        qamNetworkId = a.id;\r",
-											"        qamNetworkType = a.type;\r",
-											"    }\r",
-											"    if (a.type == \"hdovercoax\")\r",
-											"    {\r",
-											"        qamNetworkId = a.id;\r",
-											"        qamNetworkType = a.type;\r",
-											"    }\r",
-											"});\r",
-											"\r",
-											"pm.globals.set (\"qamNetworkId\", qamNetworkId);\r",
-											"pm.globals.set(\"qamNetworkType\", qamNetworkType);\r",
-											"\r",
-											""
-										],
-										"type": "text/javascript",
-										"packages": {},
-										"requests": {}
-									}
-								},
-								{
-									"listen": "test",
-									"script": {
-										"id": "91784762-a51e-4f0b-bf8d-5c9d4a23c212",
-										"exec": [
-											"let moment = require('moment');\r",
-											"const responseJson = pm.response.json();\r",
-											"var serviceEventData = responseJson.data.serviceEventData;\r",
-											"\r",
-											"\r",
-											"if (pm.response.code == 200)\r",
-											"{\r",
-											"    pm.test(\"QAN Output Network Guide Display\" , function () {\r",
-											"        pm.expect(responseJson.data).to.have.property('currentSystemTimeLocal');\r",
-											"        pm.expect((moment(responseJson.data.currentSystemTimeLocal).isValid())).to.be.true;\r",
-											"        pm.expect(responseJson.data).to.have.property('serviceEventData').that.is.an('array').with.lengthOf.greaterThan(0);\r",
-											"    });\r",
-											"\r",
-											"    for (var i = 0; i < serviceEventData.length; i++) {\r",
-											"        pm.test(\"QAM Service Data for \" + serviceEventData[i].serviceName + \" is OK\", function () {\r",
-											"            pm.expect(serviceEventData[i]).to.have.property('inputServiceId');\r",
-											"            pm.expect(serviceEventData[i]).to.have.property('serviceName');\r",
-											"            pm.expect(serviceEventData[i]).to.have.property('eventData').that.is.an('array').with.lengthOf.greaterThan(0);\r",
-											"            for (var j = 0; j < serviceEventData[i].eventData.length; j++) {\r",
-											"                pm.test(\"QAM Service Event Data for \" + serviceEventData[i].eventData[j].eventName + \" is OK\", function () {\r",
-											"                    pm.expect(serviceEventData[i].eventData[j]).to.have.property('eventName').that.is.a('string');\r",
-											"                    pm.expect(serviceEventData[i].eventData[j]).to.have.property('startTimeLocal');\r",
-											"                    pm.expect((moment(serviceEventData[i].eventData[j].startTimeLocal).isValid())).to.be.true;\r",
-											"                    pm.expect(serviceEventData[i].eventData[j]).to.have.property('duration').that.is.a('number').that.is.greaterThan(0);\r",
-											"                });\r",
-											"            }\r",
-											"        });\r",
-											"    }    \r",
-											"}\r",
-											"\r",
-											"else\r",
-											"{\r",
-											"    console.log(\"No QAM Network Guide Display\")\r",
-											"}"
-										],
-										"type": "text/javascript",
-										"packages": {},
-										"requests": {}
-									}
-								}
-							],
-							"id": "043fd0ed-f190-4e0d-b98f-8c5e1688e76c",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
