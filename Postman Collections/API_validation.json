@@ -5900,7 +5900,7 @@
 											"if (pm.response.code == 200)\r",
 											"{\r",
 											"    pm.test(\"QAN Output Network Guide Configuration\" , function () {\r",
-											"        pm.expect(responseJson.data).to.have.property('outputNetworkId').that.is.a('number').that.eqeq(3000);\r",
+											"        pm.expect(responseJson.data).to.have.property('outputNetworkId').that.is.a('number').that.eq(3000);\r",
 											"        pm.expect(responseJson.data).to.have.property('useAlternateNetworkGuide').that.is.an('object').that.has.property('initialized').that.is.a('boolean').that.eq(false);\r",
 											"        pm.expect(responseJson.data.useAlternateNetworkGuide).to.have.property('value').that.is.a('string').that.eq('');\r",
 											"        pm.expect(responseJson.data).to.have.property('selectedGuideOutputs').that.is.a('object');\r",
