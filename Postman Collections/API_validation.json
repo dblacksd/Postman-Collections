@@ -5755,6 +5755,12 @@
 									"script": {
 										"id": "91784762-a51e-4f0b-bf8d-5c9d4a23c212",
 										"exec": [
+											"const responseJson = pm.response.json();\r",
+											"const rxTypes = [\"atsc\",\"satellite\",\"ipll\",\"ip\",\"file\"];\r",
+											"const priority = [\"low\",\"normal\",\"high\"];\r",
+											"var blades = responseJson.data.qamBlades;\r",
+											"var input = responseJson.data.inputServices;\r",
+											"var outputs = responseJson.data.configuredOutputs;\r",
 											""
 										],
 										"type": "text/javascript",
